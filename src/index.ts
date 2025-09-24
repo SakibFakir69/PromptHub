@@ -1,7 +1,15 @@
 import express from 'express';
 import type { Application, Request, Response } from 'express';
+import swaggerUi from 'swagger-ui-express';
+import  swaggerJSDoc from 'swagger-jsdoc'
+
 
 const app: Application = express();
+
+
+
+  
+
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Server running on port 5000');

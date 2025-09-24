@@ -24,7 +24,7 @@ process.on('SIGINT', () => {
   process.exit(1);
 });
 
-// uncaught execprion
+// uncaught execption
 
 process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);
