@@ -1,8 +1,11 @@
+import dotenv from 'dotenv'
+dotenv.config();
 import express from 'express';
-import type { Application, Request, Response } from 'express';
-import swaggerUi from 'swagger-ui-express';
-import  swaggerJSDoc from 'swagger-jsdoc'
 
+import type { Application, Request, Response } from 'express';
+// import swaggerUi from 'swagger-ui-express';
+// import  swaggerJSDoc from 'swagger-jsdoc'
+dotenv.config();
 
 const app: Application = express();
 

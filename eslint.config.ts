@@ -10,7 +10,7 @@ export default defineConfig([
   {
     rules:{
       // gave warning on this condition 
-           'no-console':'warn',
+          //  'no-console':'warn',
 
            
       'no-undef':'warn',

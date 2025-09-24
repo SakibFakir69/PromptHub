@@ -1,27 +1,34 @@
-import { start } from 'repl';
+
+import dotenv from 'dotenv'
+dotenv.config();
 import app from './index.ts';
-import { createModuleResolutionCache } from 'typescript';
-import { mongo } from 'globals';
 import mongoose from 'mongoose';
 
+// eslint-disable-next-line no-undef
+const PORT: number = Number(process.env.PORT) || 5000;
 
-const PORT: Number = Number(process.env.PORT) || 5000;
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let server;
-let uri=process.env.MONGODB_URI;
+// eslint-disable-next-line prefer-const, no-undef
+let uri = process.env.MONGODB_URI;
+
+
+
 const startServer = async () => {
   try {
-
-    if(!uri)
-    {
-        throw new Error('mongoDb uri not founded')
+    if (!uri) {
+      throw new Error('mongoDb uri not founded');
     }
 
-    await mongoose.connect(uri)
+    await mongoose.connect(uri);
+    console.log('db connected');
     server = app.listen(PORT, () => {
       console.log(`server on running on this port ${PORT}`);
     });
-  } catch (error) {}
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (error) {
+    console.log(error)
+  }
 };
 
 startServer();
